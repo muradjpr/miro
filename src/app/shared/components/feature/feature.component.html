@@ -1,0 +1,16 @@
+<!-- single feature -->
+<div class="p-6" *ngIf="feature">
+  <h3 class="text-2xl font-bold font-inter leading-7 text-secondaryText mb-6">
+    {{ feature.title }}
+  </h3>
+  <p class="text-lg leading-6 font-normal text-secondaryText font-helvetica">
+    <span class="opacity-60"> {{ feature.description }} Please visit</span>
+    <a
+      routerLink="feature.link"
+      routerLinkActive="router-link-active"
+      class="text-blue opacity-100"
+    >
+      {{ feature.linkText }} .</a
+    >
+  </p>
+</div>
