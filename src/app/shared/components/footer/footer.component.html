@@ -1,32 +1,26 @@
-<section class="mt-20 bg-footerBg py-24">
+<section class="lg:mt-10 bg-footerBg lg:py-12 mt-10 pt-6">
   <div
-    class="mainContent text-white font-inter flex justify-between items-start space-x-24"
-  >
-    <div class="w-1/2 flex justify-start items-start gap-12">
-      <div class="">
+    class="container text-white font-inter flex-col xl:flex-row flex lg:justify-between justify-center items-start xl:space-x-24">
+    <div class="flex xl:w-3/5 justify-start flex-col md:flex-row items-start md:gap-12">
+      <!-- footer left -->
+      <div class="md:w-1/2 lg:w-3/5">
         <div>
-          <h2 class="font-inter font-extrabold text-[23px] leading-[30px]">
+          <h2 class="font-inter font-extrabold lg:text-[23px] leading-[30px] text-[15px]">
             Scan. Detect. Remove.
           </h2>
-          <div class="flex justify-start items-center gap-8 my-12">
+          <div class="flex justify-start  items-center gap-8 xl:my-12 my-4">
             <a href="">
-              <img
-                src="../../../../assets/images/Icon awesome-twitter-square.png"
-                alt=""
-              />
+              <img src="../../../../assets/images/Icon awesome-twitter-square.png" alt="" />
             </a>
             <a href="">
-              <img
-                src="../../../../assets/images/Icon awesome-facebook-square.png"
-                alt=""
-              />
+              <img src="../../../../assets/images/Icon awesome-facebook-square.png" alt="" />
             </a>
             <a href="">
               <img src="../../../../assets/images/youtube.png" alt="" />
             </a>
           </div>
           <div class="font-inter text-[11px] leading-6 text-white">
-            <div class="flex gap-8 mb-10">
+            <div class="flex gap-8 xl:mb-10">
               <a href="" class="hover:underline">Privacy Policy</a>
               <a href="" class="hover:underline">Terms & Services</a>
             </div>
@@ -40,20 +34,19 @@
             </p>
           </div>
         </div>
-        <div class="font-inter text-[11px] leading-6 mt-20">
+        <div class="font-inter text-[11px] leading-6 xl:mt-20 mt-4">
           Apple, the Apple logo, and iPhone are trademarks of Apple Inc.,
           registered in the U.S. and other countries. App Store is a service
           mark of Apple Inc. Android, Google Play and the Google Play logo are
           trademarks of Google LLC.
         </div>
       </div>
-      <div class="w-[460px]">
-        <h2
-          class="text-[35px] leading-[45px] font-extrabold border-b pb-5 mb-10"
-        >
+      <!-- footer middle -->
+      <div class="md:w-1/2 lg:w-2/5 xl:w-[460px] mt-6 md:mt-0">
+        <h2 class=" lg:text-[23px] leading-[30px] text-[15px] font-extrabold border-b lg:pb-5 pb-2 lg:mb-10 mb-4">
           Miro.
         </h2>
-        <ul class="space-y-5 text-2xl text-yellow font-extrabold">
+        <ul class="xl:space-y-5 space-y-2 text-base font-inter text-yellow font-extrabold list-disc list-inside">
           <li>Iphone</li>
           <li>Android</li>
           <li>Help</li>
@@ -62,35 +55,39 @@
         </ul>
       </div>
     </div>
-    <div class="w-1/2">
-      <div
-        class="bg-yellow w-[436px] rounded-3xl p-9 font-inter text-secondaryText"
-      >
-        <div class="z-10 relative">
-          <h2 class="font-extrabold leading-[30px] text-[23px] mb-[21px]">
+    <!-- footer right -->
+    <div class="xl:w-2/5 w-full xl:mt-0 my-8 ">
+      <div class="bg-yellow  xl:rounded-3xl rounded-xl lg:p-9 p-3 pt-5 font-inter text-secondaryText ">
+        <div class="z-10 relative xl:w-[436px] w-full">
+          <h2 class="font-extrabold lg:leading-[30px] md:text-2xl lg:text-[23px] text-base lead5  lg:mb-[21px] mb-4">
             Sign up to our newsletter
           </h2>
-          <p class="text-[15px] leading-[20px] font-normal">
+          <p class="lg:text-[15px] lg:leading-[20px] font-normal text-sm leading-4 text-secondaryText">
             Receive the latest mobile security news, exclusive discounts &
             offers straight to your inbox!
           </p>
-          <div
-            class="mt-9 border rounded-full border-white focus:ring-2 focus:ring-blue"
-          >
-            <input
-              type="text"
-              class="form-text rounded-l-full border-0 focus:ring-0"
-              placeholder="Email Address"
-            />
-            <button class="rounded-r-full bg-black px-[32px] py-2 text-white">
+          <div class="lg:mt-9 mt-4 rounded-full focus:ring-2 focus:ring-blue space-y-4 lg:space-y-0   ">
+            <input type="text"
+              class=" lg:rounded-l-full  border-0 w-full lg:w-3/5 focus:ring-blue focus:ring-1 lg:focus:ring-2 lg:px-5 lg:py-3 "
+              placeholder="Email Address" />
+            <button
+              class="lg:rounded-r-full bg-black px-[32px] py-3 text-white w-full lg:w-2/5  hover:bg-white hover:text-black lg:hover:bg-blue lg:hover:text-white transition-all ease-out duration-300">
               Submit
             </button>
           </div>
-          <div class="absolute -top-8 left-20 w-full -z-10">
-            <img src="../../../../assets/images/Path 10741.png" alt="" />
+
+          <div class="absolute lg:-top-9 xl:-top-5 lg:left-0 top-0 left-0 w-full -z-10 ">
+            <img class="w-[160px]  lg:w-[180px] mx-auto" src="../../../../assets/images/Path 10741.png" alt="" />
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+<section class="bg-gray-900 py-4 text-white">
+  <div class="container text-center">
+    <p>All rights reserved &copy; 2024 By <a href=""
+        class=" hover:underline text-rose-500 transition duration-300 ease-in-out">Hmmurad</a>
+    </p>
   </div>
 </section>

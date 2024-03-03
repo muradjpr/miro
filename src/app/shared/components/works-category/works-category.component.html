@@ -1,25 +1,22 @@
-<section class="mt-32">
-  <div class="mainContent">
+<section class="mt-20">
+  <div class="container ">
     <div class="mb-8">
-      <h2
-        class="text-5xl leading-[56px] font-bold font-inter text-secondaryText"
-      >
-        Built for the way you work
+      <h2 class="lg:text-5xl lg:leading-[56px] text-3xl leading-8 font-bold font-inter text-secondaryText">
+        {{ portfolio.title }}
       </h2>
     </div>
-    <div class="flex gap-3 overflow-x-auto scroll-smooth snap-x">
-      <a
-        *ngFor="let item of items"
-        (click)="showPan(item.title)"
-        class="cursor-pointer text-[14px] leading-[20px] text-secondaryText rounded-full bg-gray-200 px-4 py-3"
-        >{{ item.title }}</a
-      >
+    <!-- category title link -->
+    <div class="flex lg:gap-3 gap-2 flex-wrap lg:flex-nowrap">
+      <a *ngFor="let item of portfolio.portfolio" (click)="showPan(item.title)"
+        [ngClass]="{'bg-blue text-white' : this.pane === item.title}"
+        class="cursor-pointer text-[14px] leading-[20px] text-secondaryText rounded-full bg-gray-200 md:px-3 md:py-3 px-2 py-1 hover:bg-blue hover:text-white transition-all ease-in-out duration-200">{{
+        item.title }}</a>
     </div>
-    <div *ngFor="let item of items">
-      <app-works-category-pane
-        *ngIf="pane === item.title"
-        [item]="item"
-      ></app-works-category-pane>
+    <!-- category item -->
+    <div class="overflow-hidden" *ngFor="let item of portfolio.portfolio">
+      <div class="" [@portfolioInTrigger]="this.isOpen ? 'slideDown' : 'slideUp'">
+        <app-works-category-pane *ngIf="pane === item.title" [item]="item"></app-works-category-pane>
+      </div>
     </div>
   </div>
 </section>

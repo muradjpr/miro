@@ -1,29 +1,26 @@
-<section class="mt-20">
-  <div class="mainContent flex justify-between items-center gap-5">
-    <div class="max-w-xl">
+<section class="mt-12 lg:mt-0">
+  <div class="container flex lg:flex-row flex-col justify-between items-center lg:gap-5"
+    [ngClass]="{ 'lg:flex-row-reverse': index % 2 !== 0 }">
+    <div class="lg:w-2/5 w-full">
       <h2>
-        <h2
-          class="font-inter font-bold leading-[56px] text-[56px] text-secondaryText"
-        >
-          Work together, wherever you work
+        <h2 class="font-inter font-bold lg:leading-[56px] lg:text-[56px] text-3xl leading-8 text-secondaryText">
+          {{ item.featureTitle }}
         </h2>
         <p
-          class="mt-4 mb-10 font-helvetica font-normal leading-6 text-[18px] text-secondaryText opacity-70"
-        >
-          Miro is your team's visual platform to connect, collaborate, and
-          create — together.
+          class="mt-4 lg:mb-10 mb-2 font-helvetica font-normal lg:leading-6 lg:text-[18px] text-base leading-5 text-secondaryText opacity-70">
+          {{ item.featureDescription }}
         </p>
-        <a
-          href=""
-          class="text-lg leading-6 font-inter font-normal text-blue flex items-center"
-        >
-          <span class="border-b border-blue pb-[1px]">Learn More</span>
-          <i class="bx bx-right-arrow-alt bx-sm"></i
-        ></a>
+        <a href=""
+          class="text-lg leading-6 font-inter font-normal text-blue flex items-center hover:text-sky-600 transition-all duration-300">
+          <span class="border-b hover:border-blue pb-[1px] capitalize transition-all duration-300">{{
+            item.linkText
+            }}</span>
+          <i class="bx bx-right-arrow-alt bx-sm"></i></a>
       </h2>
     </div>
-    <div class="">
-      <img src="../../../assets/images/hybridwork.png.png" alt="" />
+    <div class="lg:w-3/5 w-full">
+      <img class="w-full transition-all duration-900" src="../../../assets/images/{{ item.featureImg }}" alt="" />
+
     </div>
   </div>
 </section>

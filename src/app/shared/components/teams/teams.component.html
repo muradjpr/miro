@@ -1,7 +1,7 @@
-<section class="mt-32">
+<section class="mt-0">
   <div class="mainContent">
     <div>
-      <div class="max-w-xl text-center mx-auto pt-16">
+      <div class="max-w-xl text-center mx-auto pt-10">
         <h2
           class="font-inter font-bold leading-[56px] text-[56px] text-secondaryText mb-6"
         >
@@ -16,76 +16,11 @@
         </a>
       </div>
     </div>
-    <div class="grid grid-cols-3 gap-10 mt-10 overflow-hidden">
-      <div class="p-9 h-[400px] flex flex-col justify-between items-start">
-        <img src="../../../../assets/images/vmware.png" alt="" />
-        <p
-          class="text-lg leading-6 font-normal text-secondaryText font-helvetica opacity-60 text-justify"
-        >
-          “When the pandemic hit, those of us who thrive on in-person
-          collaboration were worried that our creativity and productivity would
-          suffer. Miro was the perfect tool to help us with collaboration,
-          whiteboarding, and retrospectives while remote.”
-        </p>
-        <div class="flex justify-start items-center gap-5">
-          <img
-            src="../../../../assets/images/Jane-Docusign-Testimonials_2x.png.png"
-            alt=""
-          />
-          <div
-            class="font-helvetica text-[14px] leading-5 text-secondaryText opacity-60"
-          >
-            <h5>Roxanne Mustafa</h5>
-            <p>Design Team Lead at VMware</p>
-          </div>
-        </div>
-      </div>
-      <div class="p-9 h-[400px] flex flex-col justify-between items-start">
-        <img src="../../../../assets/images/docusign.png" alt="" />
-
-        <p
-          class="text-lg leading-6 font-normal text-secondaryText font-helvetica opacity-60 text-justify"
-        >
-          “Miro helps solve one of the major gaps in product design: how to
-          manage tasks across product designers whose projects are in different
-          tools.”
-        </p>
-        <div class="flex justify-start items-center gap-5">
-          <img
-            src="../../../../assets/images/Jane-Docusign-Testimonials_2x.png.png"
-            alt=""
-          />
-          <div
-            class="font-helvetica text-[14px] leading-5 text-secondaryText opacity-60"
-          >
-            <h5>Roxanne Mustafa</h5>
-            <p>Design Team Lead at VMware</p>
-          </div>
-        </div>
-      </div>
-      <div class="p-9 h-[400px] flex flex-col justify-between items-start">
-        <img src="../../../../assets/images/frog.png" alt="" />
-
-        <p
-          class="text-lg leading-6 font-normal text-secondaryText font-helvetica opacity-60 text-justify"
-        >
-          “As we used Miro we moved from skepticism to belief to innovation, and
-          now we have a tool that’s at the core of what we do and will continue
-          to extend into the future.”
-        </p>
-        <div class="flex justify-start items-center gap-5">
-          <img
-            src="../../../../assets/images/Jane-Docusign-Testimonials_2x.png.png"
-            alt=""
-          />
-          <div
-            class="font-helvetica text-[14px] leading-5 text-secondaryText opacity-60"
-          >
-            <h5>Roxanne Mustafa</h5>
-            <p>Design Team Lead at VMware</p>
-          </div>
-        </div>
-      </div>
+    <div class="grid grid-cols-3 gap-10 mt-20 overflow-hidden">
+      <app-team
+        *ngFor="let review of customerReview"
+        [review]="review"
+      ></app-team>
     </div>
   </div>
 </section>

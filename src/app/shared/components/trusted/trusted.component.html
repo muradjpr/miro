@@ -1,20 +1,13 @@
-<section class="mt-20">
-  <div class="mainContent text-center">
-    <h2 class="text-[18px] leading-6 font-inter font-normal">
+<section class="lg:mt-28 mt-10">
+  <div class="container text-center">
+    <h2 @trustHeaderInTrigger class="text-[18px] leading-6 font-inter font-normal">
       Trusted by 45M+ users
     </h2>
-    <div class="flex justify-around items-center gap-5 mt-12">
-      <a href="">
-        <img src="../../../assets/images/Walmart_Index_Only.svg.png" alt="" />
+    <div class="flex justify-around items-center md:gap-5 gap-2 mt-12">
+      <a href="" *ngFor="let img of brand; let i = index" @trustBrandTrigger
+        class="hover:scale-110 transition-all duration-500">
+        <img src="../../../assets/images/{{ img.logo }}" alt="" />
       </a>
-      <a href=""> <img src="../../../assets/images/cisco.png" alt="" /></a>
-      <a href="">
-        <img src="../../../../assets/images/Volvo_Index_Only.svg.png" alt=""
-      /></a>
-      <a href="">
-        <img src="../../../assets/images/deloitte.svg.png" alt=""
-      /></a>
-      <a href=""> <img src="../../../assets/images/okta.svg.png" alt="" /></a>
     </div>
   </div>
 </section>

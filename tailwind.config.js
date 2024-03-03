@@ -4,9 +4,11 @@ module.exports = {
   darkMode: "class",
   theme: {
     screens: {
-      sm: "480px",
+      sm: "640px",
       md: "768px",
-      lg: "1440px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1140px",
     },
     extend: {
       colors: {
@@ -35,12 +37,10 @@ module.exports = {
     },
     container: {
       center: true,
-      width: {
-        lg: "1140px",
-      },
       padding: {
         DEFAULT: "1rem",
-        sm: "1.5rem",
+        sm: "10px",
+        md: "30px",
       },
     },
     fontFamily: {

@@ -1,46 +1,35 @@
-<section class="my-12">
-  <div class="mainContent flex justify-between items-start gap-5">
-    <div class="w-[440px] space-y-6">
-      <div class="space-y-4">
-        <h2
-          class="font-inter font-bold leading-[56px] text-[56px] text-secondaryText"
-        >
+<section class="my-12" @heroTrigger>
+  <div class="container flex justify-center text-center flex-col-reverse md:flex-row items-start gap-5 ">
+    <!-- hero left -->
+    <div class="lg:space-y-10 space-y-4 md:w-2/5">
+      <div class="lg:space-y-6 space-y-3  text-center md:text-left">
+        <h2 class="font-inter font-bold lg:leading-[56px] leading-4 md:text-2xl lg:text-[56px] text-secondaryText">
           Take ideas from better to best
         </h2>
-        <p
-          class="font-helvetica font-normal leading-6 text-[18px] text-secondaryText opacity-70"
-        >
+        <p class="font-helvetica font-normal lg:leading-6 leading-4 md:text-[18px] text-secondaryText opacity-70">
           Miro is your team's visual platform to connect, collaborate, and
           create — together.
         </p>
       </div>
       <div class="w-full">
-        <input
-          type="text"
-          class="w-full rounded-full px-6 py-3 text-left form-input font-inter"
-          placeholder="Enter your work email"
-        />
+        <!-- sign up & input field area -->
+        <input type="text"
+          class="w-full rounded-full px-6 py-3 text-left form-input font-inter focus:ring-[1px] shadow-md focus:ring-offset-4 focus:ring-blue transition-all duration-500 ease-linear border"
+          placeholder="Enter your work email" />
         <button
-          class="mt-3 blueBtn w-full text-center flex justify-center items-center gap-2 font-helvetica"
-        >
-          Sign up free <i class="bx bx-right-arrow-alt bx-sm"></i>
+          class="mt-3 blueBtn w-full text-center flex justify-center items-center group gap-2 font-helvetica hover:bg-indigo-500 transition-all ease-linear duration-500">
+          Sign up free
+          <i class="bx bx-right-arrow-alt bx-sm group-hover:rotate-180 duration-1000"></i>
         </button>
-        <p
-          class="text-[14px] leading-4 mt-2 font-helvetica text-secondaryText opacity-40"
-        >
+        <p class="text-[14px] leading-4 mt-2 font-helvetica text-secondaryText opacity-40">
           Collaborate with your team within minutes
         </p>
+        <!-- rating area -->
         <div
-          class="bg-bgSecondary p-[14px] rounded-lg flex justify-start items-center gap-8 w-[80%] mt-12"
-        >
+          class="bg-bgSecondary lg:p-[14px] p-[8px] rounded-lg flex flex-col lg:flex-row justify-start md:justify-evenly items-center gap-3 lg:gap-8 w-full  xl:w-[80%] lg:mt-12 mt-5">
           <div>
             <div class="card flex justify-content-center">
-              <p-rating
-                [ngModel]="rating"
-                [readonly]="true"
-                [cancel]="false"
-                [stars]="5"
-              ></p-rating>
+              <p-rating [ngModel]="rating" [readonly]="true" [cancel]="false" [stars]="5"></p-rating>
             </div>
 
             <p class="text-[11px] text-secondaryText font-helvetica leading-4">
@@ -55,11 +44,9 @@
         </div>
       </div>
     </div>
-    <div class="w-[640px]">
-      <img
-        src="../../../assets/images/headerimage-without-text.png.png"
-        alt=""
-      />
+    <!-- hero right -->
+    <div class="md:w-3/5">
+      <img class="w-full" src="../../../assets/images/headerimage-without-text.png.png" alt="" />
     </div>
   </div>
 </section>

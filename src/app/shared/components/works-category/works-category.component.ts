@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { WorksCategoryPaneComponent } from '../works-category-pane/works-category-pane.component';
+import { portfolioInState } from '../../../core/constants/portfolio.animations';
 
 @Component({
   selector: 'app-works-category',
@@ -9,12 +10,15 @@ import { WorksCategoryPaneComponent } from '../works-category-pane/works-categor
   imports: [TabMenuModule, CommonModule, WorksCategoryPaneComponent],
   templateUrl: './works-category.component.html',
   styleUrl: './works-category.component.css',
+  animations: [portfolioInState],
 })
 export class WorksCategoryComponent {
+  @Input() portfolio: any;
   items: any[] | undefined;
-  pane = 'brainstorming';
-
+  pane = '';
+  isOpen: boolean = false;
   ngOnInit() {
+    this.pane = this.portfolio.portfolio[0].title;
     this.items = [
       {
         title: 'brainstorming',
@@ -61,6 +65,7 @@ export class WorksCategoryComponent {
   }
 
   showPan(value: any) {
+    this.isOpen = !this.isOpen;
     this.pane = value;
   }
 }

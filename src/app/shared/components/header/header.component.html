@@ -1,33 +1,74 @@
-<div class="bg-indigo-500 min-w-lg ]">
+<div class=" bg-indigo-500 ">
   <div
-    class="bg-primaryColor px-[30px] text-black border-b-[1px] border-borderColor h-[91px] my-auto flex justify-between items-center gap-3"
-  >
+    class="bg-primaryColor px-2 lg:px-[30px] text-black border-b-[1px] border-borderColor   flex flex-col lg:flex-row justify-between items-center gap-3 ">
     <div class="flex justify-start items-center gap-3">
-      <a href="">
-        <img
-          src="../../../../assets/images/logo.png"
-          class="w-[91px] h-[32px]"
-          alt=""
-        />
+      <!-- logo -->
+      <a href="" class="pt-3 lg:pt-0">
+        <img src="../../../../assets/images/logo.png" class="w-[91px] h-[32px]" alt="" />
       </a>
-      <div class="flex justify-start items-center gap-4 mt-2 ms-2">
-        <a href="" class="headerText">Products</a>
-        <a href="" class="headerText">Solutions</a>
-        <a href="" class="headerText">Resources</a>
-        <a href="" class="headerText">Enterprise</a>
-        <a href="" class="headerText">Pricing</a>
+      <!-- main menu -->
+      <div class=" justify-start items-center gap-4 ms-2 relative hidden lg:flex ">
+        <a routerLink="{{ item.link }}" routerLinkActive="text-blue" (click)="onShowSubmenu(i)"
+          class="headerText flex items-center gap-1 py-6 hover:text-blue transition-all ease-in duration-300"
+          *ngFor="let item of menuItems; let i = index">{{ item.menu }}
+          <i *ngIf="item.subMenuItems" class="bx bx-chevron-down bx-sm"></i></a>
+        <div @submenuTrigger class="absolute top-[74px] bg-gray-200 border-[1px] min-w-[300px] rounded-b-md"
+          *ngIf="showMenu">
+          <ul class="divide-y divide-dashed divide-gray-300">
+            <li class="cursor-pointer px-5 py-1">Sub menu</li>
+            <li class="cursor-pointer px-5 py-1">Sub menu</li>
+            <li class="cursor-pointer px-5 py-1">Sub menu</li>
+            <li class="cursor-pointer px-5 py-1">Sub menu</li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="flex items-center justify-end gap-4">
-      <a href="" class="items-center flex gap-2">
+    <!-- right side menu items -->
+    <div class=" items-center justify-end gap-4 hidden lg:flex ">
+      <a href=""
+        class="text-xs xl:text-base items-center flex gap-2 hover:text-blue transition-all ease-in duration-300">
         <i class="bx bx-globe bx-sm"></i>
         EN
       </a>
-      <a href="" class="headerText">Contact Sales</a>
-      <a href="" class="headerText">Login</a>
-      <a href="" class="blueBtn headerText flex gap-2"
-        >Sign up free <i class="bx bx-right-arrow-alt bx-sm"></i>
+      <a href="" class="text-xs xl:text-base headerText hover:text-blue transition-all ease-in duration-300">Contact
+        Sales</a>
+      <a href="" class="text-xs xl:text-base headerText hover:text-blue transition-all ease-in duration-300">Login</a>
+      <a
+        class="cursor-pointer blueBtn headerText justify-start px-[8px] py-[3px] items-center text-xs xl:text-base flex gap-2 hover:bg-white hover:border-blue hover:text-blue border transition-colors ease-in delay-200 duration-400">Sign
+        up free <i class="bx bx-right-arrow-alt bx-xs"></i>
       </a>
+    </div>
+    <!-- small device menu -->
+    <div class="flex flex-col gap-3 lg:hidden">
+      <div class="flex gap-3">
+        <a routerLink="{{ item.link }}" routerLinkActive="text-blue" (click)="onShowSubmenu(i)"
+          class=" headerText flex items-center gap-1 hover:text-blue transition-all ease-in duration-300"
+          *ngFor="let item of menuItems; let i = index">{{ item.menu }}
+          <i *ngIf="item.subMenuItems" class="bx bx-chevron-down bx-sm"></i></a>
+      </div>
+      <div class="flex gap-3 items-center text-xs mb-3 justify-center">
+        <a href=""
+          class="space-x-1 border px-2 py-1 rounded-full border-blue text-xs flex  hover:text-blue transition-all ease-in duration-300">
+          <i class="bx bx-globe bx-xs"></i>
+          <span class="text-xs">EN</span>
+        </a>
+        <a href="" class="headerText text-xs hover:text-blue transition-all ease-in duration-300">Contact Sales</a>
+        <a href="" class="headerText text-xs hover:text-blue transition-all ease-in duration-300">Login</a>
+        <a
+          class="py-1 text-xs cursor-pointer rounded-full px-3  flex gap-2 hover:bg-white hover:border-blue hover:text-blue border transition-colors ease-in delay-200 duration-400">Sign
+          up free <i class="bx bx-right-arrow-alt bx-xs"></i>
+        </a>
+
+      </div>
+
+      <div class="absolute top-[54px] bg-gray-200 border-[1px] min-w-[300px] rounded-b-md" *ngIf="showMenu">
+        <ul class="divide-y divide-dashed divide-gray-300">
+          <li class="cursor-pointer px-5 py-1">Sub menu</li>
+          <li class="cursor-pointer px-5 py-1">Sub menu</li>
+          <li class="cursor-pointer px-5 py-1">Sub menu</li>
+          <li class="cursor-pointer px-5 py-1">Sub menu</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

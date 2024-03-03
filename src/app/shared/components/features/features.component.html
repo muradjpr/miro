@@ -1,32 +1,26 @@
-<section class="mt-32">
-  <div class="mainContent">
+<section class="lg:mt-28 mt-12">
+  <div class="container">
     <!-- features area header -->
     <div>
       <div class="max-w-xl text-center mx-auto relative pt-16">
         <p
-          class="mb-12 font-inter uppercase rounded-full bg-yellow px-4 py-2 font-bold text-xs rotate-12 absolute -right-16 top-4"
-        >
+          class="lg:mb-12 mb-10 font-inter uppercase rounded-full bg-yellow px-4 py-2 font-bold text-xs rotate-12 absolute lg:-right-16 -right-0 top-6">
           your idea starts here
         </p>
         <h2
-          class="font-inter font-bold leading-[56px] text-[56px] text-secondaryText"
-        >
+          class="font-inter font-bold lg:leading-[56px] leading-8 text-3xl lg:text-[56px] text-secondaryText max-w-md lg:max-w-xl">
           Collaborate without constraints
         </h2>
       </div>
     </div>
     <!-- feature loop here -->
-    <div class="grid grid-cols-3 gap-10 mt-10 overflow-hidden">
-      <app-feature
-        *ngFor="let feature of features"
-        [feature]="feature"
-      ></app-feature>
+    <div class="grid lg:grid-cols-3 grid-cols-1 text-justify lg:text-left lg:gap-6 gap-4 lg:mt-10 mt-8 overflow-hidden">
+      <app-feature *ngFor="let feature of features" [feature]="feature"></app-feature>
     </div>
     <!-- sign up button  -->
     <div class="w-full mt-10">
       <button
-        class="mt-3 blueBtn text-center flex justify-center items-center gap-2 mx-auto font-helvetica"
-      >
+        class="lg:mt-3 blueBtn text-center flex justify-center items-center gap-2 mx-auto font-helvetica hover:bg-white hover: border-blue transition-all duration-500 hover:text-blue border">
         Sign up free <i class="bx bx-right-arrow-alt bx-sm"></i>
       </button>
     </div>

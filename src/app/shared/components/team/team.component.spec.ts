@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConnectToolsComponent } from './connect-tools.component';
+import { TeamComponent } from './team.component';
 
-describe('ConnectToolsComponent', () => {
-  let component: ConnectToolsComponent;
-  let fixture: ComponentFixture<ConnectToolsComponent>;
+describe('TeamComponent', () => {
+  let component: TeamComponent;
+  let fixture: ComponentFixture<TeamComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ConnectToolsComponent]
+      imports: [TeamComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ConnectToolsComponent);
+    fixture = TestBed.createComponent(TeamComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

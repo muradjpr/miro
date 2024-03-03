@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CategoryPaneComponent } from './category-pane.component';
+import { AboutComponent } from './about.component';
 
-describe('CategoryPaneComponent', () => {
-  let component: CategoryPaneComponent;
-  let fixture: ComponentFixture<CategoryPaneComponent>;
+describe('AboutComponent', () => {
+  let component: AboutComponent;
+  let fixture: ComponentFixture<AboutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CategoryPaneComponent]
+      imports: [AboutComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CategoryPaneComponent);
+    fixture = TestBed.createComponent(AboutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
