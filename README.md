@@ -1,5 +1,20 @@
 # Miro
 
+# Frontend
+  - Framework
+      - Angular
+      - Tailwindcss
+      - primeNg
+      - Angular Animation
+# Hosting
+  - Firebase hosting
+  - github
+
+# Features
+  - Animation
+  - Responsive
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
 
 ## Development server
