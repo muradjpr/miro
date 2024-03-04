@@ -1,8 +1,10 @@
-import { animate, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { subMenuState } from '../../../core/constants/header.animations';
+import {
+  mobileMenuState,
+  subMenuState,
+} from '../../../core/constants/header.animations';
 
 @Component({
   selector: 'app-header',
@@ -11,11 +13,12 @@ import { subMenuState } from '../../../core/constants/header.animations';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  animations: [subMenuState],
+  animations: [subMenuState, mobileMenuState],
 })
 export class HeaderComponent implements OnInit {
   menuItems: any[] = [];
   showMenu: boolean = false;
+  showMobileMenu: boolean = false;
 
   ngOnInit(): void {
     this.menuItems = [
@@ -36,5 +39,14 @@ export class HeaderComponent implements OnInit {
     if (this.menuItems[index].subMenuItems.length > 0) {
       this.showMenu = !this.showMenu;
     }
+  }
+
+  onShowMenu(event: Event) {
+    event.preventDefault();
+    this.showMobileMenu = !this.showMobileMenu;
+  }
+
+  onClose() {
+    this.showMenu = false;
   }
 }

@@ -27,3 +27,31 @@ export const subMenuState = trigger('submenuTrigger', [
     ),
   ]),
 ]);
+//  hmburger menu animation
+export const mobileMenuState = trigger('mobileMenuTrigger', [
+  transition(':enter', [
+    style({
+      transform: 'translateY(-100%)',
+    }),
+    animate(
+      600,
+      style({
+        transform: 'translateY(0)',
+      })
+    ),
+  ]),
+  transition(':leave', [
+    style({
+      transform: 'translateY(0)',
+    }),
+    animate(
+      600,
+      style({
+        transform: 'translateY(-100%)',
+        opacity: 0,
+      })
+    ),
+  ]),
+]);
+
+// open close hmburger menu

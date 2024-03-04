@@ -22,3 +22,8 @@
     padding: 10px;
   }
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}

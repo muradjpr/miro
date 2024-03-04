@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RatingModule } from 'primeng/rating';
 import { FeaturesComponent } from '../../shared/components/features/features.component';
@@ -10,6 +10,7 @@ import { HeroComponent } from '../../shared/components/hero/hero.component';
 import { PromoAreaComponent } from '../../shared/components/promo-area/promo-area.component';
 import { WorksCategoryComponent } from '../../shared/components/works-category/works-category.component';
 import { TeamsComponent } from '../../shared/components/teams/teams.component';
+import { heroAnimationState } from '../../core/constants/hero.animations';
 
 @Component({
   selector: 'app-home',
@@ -29,10 +30,13 @@ import { TeamsComponent } from '../../shared/components/teams/teams.component';
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
+  animations: [heroAnimationState],
 })
 export class HomeComponent implements OnInit {
   featureArea: any[] = [];
   portfolioArea: any[] = [];
+
+  @Input() show: any;
 
   ngOnInit(): void {
     this.featureArea = [

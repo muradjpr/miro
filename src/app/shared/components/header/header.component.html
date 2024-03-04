@@ -1,24 +1,29 @@
-<div class=" bg-indigo-500 ">
+<div class=" ">
   <div
-    class="bg-primaryColor px-2 lg:px-[30px] text-black border-b-[1px] border-borderColor   flex flex-col lg:flex-row justify-between items-center gap-3 ">
+    class="hidden bg-primaryColor px-2 lg:px-[30px] text-black border-b-[1px] border-borderColor   sm:flex flex-col lg:flex-row justify-between items-center gap-3 ">
     <div class="flex justify-start items-center gap-3">
       <!-- logo -->
       <a href="" class="pt-3 lg:pt-0">
         <img src="../../../../assets/images/logo.png" class="w-[91px] h-[32px]" alt="" />
       </a>
+
       <!-- main menu -->
       <div class=" justify-start items-center gap-4 ms-2 relative hidden lg:flex ">
         <a routerLink="{{ item.link }}" routerLinkActive="text-blue" (click)="onShowSubmenu(i)"
           class="headerText flex items-center gap-1 py-6 hover:text-blue transition-all ease-in duration-300"
           *ngFor="let item of menuItems; let i = index">{{ item.menu }}
-          <i *ngIf="item.subMenuItems" class="bx bx-chevron-down bx-sm"></i></a>
+          <i *ngIf="item.subMenuItems" class="bx bx-chevron-{{this.showMenu? 'up':'down'}} bx-sm"></i></a>
         <div @submenuTrigger class="absolute top-[74px] bg-gray-200 border-[1px] min-w-[300px] rounded-b-md"
           *ngIf="showMenu">
           <ul class="divide-y divide-dashed divide-gray-300">
-            <li class="cursor-pointer px-5 py-1">Sub menu</li>
-            <li class="cursor-pointer px-5 py-1">Sub menu</li>
-            <li class="cursor-pointer px-5 py-1">Sub menu</li>
-            <li class="cursor-pointer px-5 py-1">Sub menu</li>
+            <li class="cursor-pointer px-5 py-1  hover:bg-blue hover:text-white" (click)="onClose()">Sub
+              menu</li>
+            <li class="cursor-pointer px-5 py-1  hover:bg-blue hover:text-white" (click)="onClose()">Sub
+              menu</li>
+            <li class="cursor-pointer px-5 py-1  hover:bg-blue hover:text-white" (click)="onClose()">Sub
+              menu</li>
+            <li class="cursor-pointer px-5 py-1  hover:bg-blue hover:text-white" (click)="onClose()">Sub
+              menu</li>
           </ul>
         </div>
       </div>
@@ -44,7 +49,7 @@
         <a routerLink="{{ item.link }}" routerLinkActive="text-blue" (click)="onShowSubmenu(i)"
           class=" headerText flex items-center gap-1 hover:text-blue transition-all ease-in duration-300"
           *ngFor="let item of menuItems; let i = index">{{ item.menu }}
-          <i *ngIf="item.subMenuItems" class="bx bx-chevron-down bx-sm"></i></a>
+          <i *ngIf="item.subMenuItems" class="bx bx-chevron-{{this.showMenu? 'up':'down'}} bx-sm"></i></a>
       </div>
       <div class="flex gap-3 items-center text-xs mb-3 justify-center">
         <a href=""
@@ -61,14 +66,58 @@
 
       </div>
 
-      <div class="absolute top-[54px] bg-gray-200 border-[1px] min-w-[300px] rounded-b-md" *ngIf="showMenu">
+      <div class="  bg-gray-200 border-[1px] min-w-[300px] rounded-b-md" *ngIf="showMenu"
+        [@submenuTrigger]="this.showMenu">
         <ul class="divide-y divide-dashed divide-gray-300">
-          <li class="cursor-pointer px-5 py-1">Sub menu</li>
-          <li class="cursor-pointer px-5 py-1">Sub menu</li>
-          <li class="cursor-pointer px-5 py-1">Sub menu</li>
-          <li class="cursor-pointer px-5 py-1">Sub menu</li>
+          <li class=" px-5 py-1 cursor-pointer hover:bg-blue hover:text-white" (click)="onClose()">
+            <a href="" class="">Sub menu</a>
+          </li>
+          <li class=" px-5 py-1 cursor-pointer hover:bg-blue hover:text-white" (click)="onClose()">
+            <a href="" class="">Sub menu</a>
+          </li>
+          <li class=" px-5 py-1 cursor-pointer hover:bg-blue hover:text-white" (click)="onClose()">
+            <a href="" class="">Sub menu</a>
+          </li>
+          <li class=" px-5 py-1 cursor-pointer hover:bg-blue hover:text-white" (click)="onClose()">
+            <a href="" class="">Sub menu</a>
+          </li>
         </ul>
       </div>
+    </div>
+
+  </div>
+  <!-- mobile menu -->
+  <div class="bg-primaryColor  text-black border-b-[1px] border-borderColor visible sm:hidden">
+    <div class="flex  justify-between items-center gap-3 px-4 py-2 ">
+      <a routerLink="/home"><img src="../../../../assets/images/logo.png" alt=""></a>
+      <a href="" (click)="onShowMenu($event)"><i class="bx {{this.showMobileMenu ? 'bx-x':'bx-menu'}} bx-lg"></i></a>
+    </div>
+    <div class="overflow-hidden">
+      <ul class="flex flex-col items-center justify-start gap-3 mb-4" *ngIf="this.showMobileMenu"
+        [@mobileMenuTrigger]="this.showMobileMenu">
+        <li>
+          <a href="">Products</a>
+        </li>
+        <li>
+          <a href="">Resources</a>
+        </li>
+        <li>
+          <a href="">Solutions</a>
+        </li>
+        <li>
+          <a href="">Enterprises</a>
+        </li>
+        <li>
+          <a href="">Pricing</a>
+        </li>
+        <li class="flex justify-center items-center gap-3">
+          <a href="" class="text-secondaryText hover:text-blue flex items-center gap-2"><i
+              class='bx bx-globe bx-md'></i><span>EN</span></a>
+          <a href="" class="text-secondaryText hover:text-blue">login</a>
+          <a href="" class="text-secondaryText hover:text-blue">Contact Sales</a>
+          <a href="" class="text-secondaryText hover:text-blue border rounded-full px-2">Sign up free</a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
